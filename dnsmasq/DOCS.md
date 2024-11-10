@@ -39,6 +39,12 @@ services:
     priority: 0
     weight: 100
 log_queries: false
+advanced: |
+  ptr-record=10.1.168.192.in-addr.arpa,home.mydomain.io
+  host-record=server.example.org,172.16.1.1
+  txt-record=example.org,"Some text"
+  cname=mymail.example.org,server.example.org
+  mx-host=example.org,mymail.example.org,50
 ```
 
 ### Option: `defaults` (required)
@@ -118,6 +124,10 @@ The name to resolve.
 #### Option: `cnames.target`
 
 The target name. Note that this only works for targets which are names from DHCP or /etc/hosts. Give host "bert" another name, bertrand cname=bertand,bert
+
+### Option: `advanced` (optional)
+
+This option allows you to provide advanced configuration, see https://thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html.
 
 ### Option: `log_queries` (required) 
 

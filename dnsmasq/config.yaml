@@ -1,5 +1,5 @@
 ---
-version: 1.8.1
+version: 1.8.1-local-01
 slug: dnsmasq
 name: Dnsmasq
 description: A simple DNS server
@@ -21,6 +21,7 @@ options:
   hosts: []
   services: []
   cnames: []
+  advanced: ""
   log_queries: false
   cache_size: 150
 ports:
@@ -43,7 +44,8 @@ schema:
       weight: int
   cnames:
     - name: str
-      target: str
+      target: str,
+  advanced: str,
   log_queries: bool
   cache_size: int
 startup: system
